@@ -1,8 +1,27 @@
 import "../styles/Navbar.css";
+import { useEffect, useState } from "react";
 
 function Navbar() {
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
+
+  }, []);
+
   return (
-    <header className="navbar">
+
+    <header className={scrolled ? "navbar scrolled" : "navbar"}>
+
       <div className="navbar-container">
 
         <div className="logo">
@@ -11,19 +30,29 @@ function Navbar() {
         </div>
 
         <ul className="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+
+          <li><a href="#home">Home</a></li>
+
+          <li><a href="#about">About</a></li>
+
           <li><a href="#">Skills</a></li>
+
           <li><a href="#">Projects</a></li>
+
           <li><a href="#">Contact</a></li>
+
         </ul>
 
         <button className="contact-btn">
+
           Let's Talk
+
         </button>
 
       </div>
+
     </header>
+
   );
 }
 

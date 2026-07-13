@@ -1,0 +1,23 @@
+.progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    height:4px;
+
+    z-index:9999;
+
+    background:linear-gradient(
+    90deg,
+    #4facfe,
+    #8b5cf6);
+
+    box-shadow:
+    0 0 15px rgba(79,172,254,.5);
+
+    transition:width .15s linear;
+
+}
