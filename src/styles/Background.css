@@ -1,0 +1,51 @@
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -100;
+  overflow: hidden;
+  background: #070b1a;
+}
+
+/* Grid */
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+  background-size: 50px 50px;
+
+  opacity: .35;
+}
+
+/* Mouse Glow */
+
+.mouse-glow{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(79,172,254,.28) 0%,
+        rgba(79,172,254,.12) 35%,
+        transparent 75%);
+
+    filter:blur(40px);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+    left .15s linear,
+    top .15s linear;
+
+}

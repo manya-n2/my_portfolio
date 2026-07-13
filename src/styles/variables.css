@@ -1,0 +1,20 @@
+:root {
+  /* Colors */
+  --bg-color: #070b1a;
+  --bg-secondary: #111827;
+  --card-bg: rgba(255, 255, 255, 0.04);
+
+  --primary-color: #4facfe;
+  --secondary-color: #8b5cf6;
+
+  --text-color: #ffffff;
+  --text-light: #a0aec0;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* Effects */
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  --radius: 20px;
+
+  --transition: all 0.3s ease;
+}

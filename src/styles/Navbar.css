@@ -1,0 +1,131 @@
+.navbar{
+
+    width:100%;
+
+    position:fixed;
+
+    top:20px;
+
+    left:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    z-index:1000;
+
+}
+
+.navbar-container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 40px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:60px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.logo span{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#4facfe,#8b5cf6);
+
+    font-weight:bold;
+
+}
+
+.logo h2{
+
+    font-size:22px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#4facfe;
+
+}
+
+.contact-btn{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#4facfe,#8b5cf6);
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 30px rgba(79,172,254,.35);
+
+}
