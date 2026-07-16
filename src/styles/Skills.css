@@ -1,173 +1,297 @@
-.skills {
-
-    width: 90%;
-    max-width: 1300px;
-    margin: 150px auto;
-
-}
-
-.skill-category {
-
-    margin-top: 70px;
-
-}
-
-.skill-category h3 {
-
-    font-size: 30px;
-    margin-bottom: 30px;
-    color: white;
-
-}
-
-.skill-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-    gap: 25px;
-
-}
-
-.skill-card {
-
-    background: rgba(255,255,255,.05);
-
-    border: 1px solid rgba(255,255,255,.08);
-
-    backdrop-filter: blur(18px);
-
-    border-radius: 24px;
-
-    padding: 35px 20px;
-
-    text-align: center;
-
-    cursor: pointer;
-
-    transition: .35s;
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-.skill-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: -120%;
-
-    left: -120%;
-
-    width: 220%;
-
-    height: 220%;
-
-    background: linear-gradient(
-        135deg,
-        transparent,
-        rgba(79,172,254,.18),
-        transparent
-    );
-
-    transform: rotate(25deg);
-
-    transition: .8s;
-
-}
-
-.skill-card:hover::before {
-
-    top: -40%;
-    left: -40%;
-
-}
-
-.skill-card:hover {
-
-    border-color: rgba(79,172,254,.5);
-
-    box-shadow:
-        0 15px 35px rgba(79,172,254,.18);
-
-}
-
-.skill-icon {
-
-    font-size: 48px;
-
-    color: #4facfe;
-
-    margin-bottom: 25px;
-
-    transition: .35s;
-
-}
-
-.skill-card:hover .skill-icon {
-
-    transform: scale(1.2);
-
-    color: #7dd3fc;
-
-}
-
-.skill-card h4 {
-
-    font-size: 20px;
-
-    color: white;
-
-    font-weight: 600;
-
-}
-
-/* Responsive */
-
-@media(max-width:1000px){
-
 .skills{
 
-margin:120px auto;
+    width:90%;
+    max-width:1400px;
+    margin:150px auto;
 
 }
 
-.skill-grid{
+.network{
 
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    position:relative;
 
-}
+    width:100%;
 
-.skill-category h3{
+    height:700px;
 
-text-align:center;
+    margin-top:70px;
 
-}
+    border-radius:30px;
 
-}
+    overflow:hidden;
 
-@media(max-width:600px){
+    background:
+    radial-gradient(circle at center,
+    rgba(79,172,254,.08),
+    transparent 70%);
 
-.skill-card{
+    border:1px solid rgba(255,255,255,.06);
 
-padding:28px 15px;
-
-}
-
-.skill-icon{
-
-font-size:38px;
+    backdrop-filter:blur(15px);
 
 }
 
-.skill-card h4{
+/* SVG */
 
-font-size:17px;
+.network-svg{
+
+    width:100%;
+    height:100%;
+    display:block;
+
+}
+
+/* ================= NODES ================= */
+
+.network-node{
+
+    transition:.35s ease;
+
+    cursor:pointer;
+
+}
+
+.network-node:hover{
+
+    fill:#172554;
+
+    stroke:#60a5fa;
+
+    stroke-width:3;
+
+}
+
+.node-label{
+
+    fill:white;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    font-family:"Inter",sans-serif;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+/* ================= GLOW ================= */
+
+.node-glow{
+
+    fill:#4facfe;
+
+    filter:blur(10px);
+
+    opacity:.15;
+
+}
+
+.active-glow{
+
+    opacity:.45;
+
+}
+
+/* ================= LINES ================= */
+
+line{
+
+    transition:.35s;
+
+}
+
+/* ================= RADAR ================= */
+
+.radar-ring{
+
+    fill:none;
+
+    stroke:#4facfe;
+
+    stroke-width:2;
+
+    opacity:.18;
+
+}
+
+/* ================= PARTICLES ================= */
+
+.bg-particle{
+
+    fill:#4facfe;
+
+    opacity:.4;
+
+}
+
+/* ================= INFO ================= */
+
+.network-info{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%);
+
+    width:70%;
+
+    text-align:center;
+
+}
+
+.network-info h3{
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+}
+
+.network-info p{
+
+    color:#94a3b8;
+
+    line-height:1.8;
+
+}
+
+/* ================= GRID ================= */
+
+.network::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    pointer-events:none;
+
+}
+
+/* ================= CENTER LIGHT ================= */
+
+.network::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(79,172,254,.22),
+
+    rgba(139,92,246,.08),
+
+    transparent 70%);
+
+    filter:blur(70px);
+
+    animation:centerPulse 4s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes centerPulse{
+
+0%{
+
+transform:translate(-50%,-50%) scale(.9);
+
+opacity:.5;
+
+}
+
+50%{
+
+transform:translate(-50%,-50%) scale(1.15);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translate(-50%,-50%) scale(.9);
+
+opacity:.5;
+
+}
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+.network{
+
+height:620px;
+
+}
+
+.network-info{
+
+width:90%;
+
+}
+
+.node-label{
+
+font-size:11px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.network{
+
+height:500px;
+
+overflow-x:auto;
+
+}
+
+.network-svg{
+
+min-width:950px;
+
+}
+
+.network-info{
+
+display:none;
 
 }
 

@@ -1,158 +1,543 @@
 import "../styles/Skills.css";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
-import {
-  FaReact,
-  FaJava,
-  FaPython,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaGithub,
-  FaFigma,
-  FaNodeJs,
-  FaDatabase,
-} from "react-icons/fa";
+const nodes = [
+  {
+    id: "you",
+    label: "M",
+    x: 500,
+    y: 320,
+    radius: 34,
+  },
 
-import {
-  SiJavascript,
-  SiSpringboot,
-  SiPostgresql,
-  SiTailwindcss,
-  SiMysql,
-  SiDocker,
-} from "react-icons/si";
+  {
+    id: "react",
+    label: "React",
+    x: 500,
+    y: 80,
+    radius: 22,
+  },
 
-function Skills() {
-  const frontend = [
-    { icon: <FaReact />, name: "React" },
-    { icon: <FaHtml5 />, name: "HTML5" },
-    { icon: <FaCss3Alt />, name: "CSS3" },
-    { icon: <SiJavascript />, name: "JavaScript" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-  ];
+  {
+    id: "java",
+    label: "Java",
+    x: 300,
+    y: 180,
+    radius: 22,
+  },
 
-  const backend = [
-    { icon: <FaJava />, name: "Java" },
-    { icon: <SiSpringboot />, name: "Spring Boot" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <FaDatabase />, name: "REST APIs" },
-  ];
+  {
+    id: "spring",
+    label: "Spring",
+    x: 700,
+    y: 180,
+    radius: 22,
+  },
 
-  const databases = [
-    { icon: <SiPostgresql />, name: "PostgreSQL" },
-    { icon: <SiMysql />, name: "MySQL" },
-  ];
+  {
+    id: "git",
+    label: "Git",
+    x: 170,
+    y: 320,
+    radius: 22,
+  },
 
-  const tools = [
-    { icon: <FaGitAlt />, name: "Git" },
-    { icon: <FaGithub />, name: "GitHub" },
-    { icon: <FaFigma />, name: "Figma" },
-    { icon: <SiDocker />, name: "Docker" },
-  ];
+  {
+    id: "javascript",
+    label: "JavaScript",
+    x: 830,
+    y: 320,
+    radius: 22,
+  },
 
-  const languages = [
-    { icon: <FaJava />, name: "Java" },
-    { icon: <FaPython />, name: "Python" },
-    { icon: <SiJavascript />, name: "JavaScript" },
-  ];
+  {
+    id: "postgres",
+    label: "PostgreSQL",
+    x: 320,
+    y: 470,
+    radius: 22,
+  },
 
-  const renderCards = (list) =>
-    list.map((skill, index) => (
-      <motion.div
-        key={index}
-        className="skill-card"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          delay: index * 0.08,
-          duration: 0.5,
-        }}
-        whileHover={{
-          y: -8,
-          scale: 1.05,
-        }}
-      >
-        <div className="skill-icon">{skill.icon}</div>
+  {
+    id: "python",
+    label: "Python",
+    x: 680,
+    y: 470,
+    radius: 22,
+  },
 
-        <h4>{skill.name}</h4>
-      </motion.div>
-    ));
+  {
+    id: "docker",
+    label: "Docker",
+    x: 500,
+    y: 580,
+    radius: 22,
+  },
+];
+const links = [
+
+  ["you","react"],
+  ["you","java"],
+  ["you","spring"],
+  ["you","git"],
+  ["you","javascript"],
+  ["you","postgres"],
+  ["you","python"],
+  ["you","docker"],
+
+  ["react","spring"],
+  ["java","git"],
+  ["spring","javascript"],
+  ["git","postgres"],
+  ["python","docker"],
+];
+
+function Skills(){
+
+    const [active,setActive]=useState(null);
+
+    const getNode=(id)=>nodes.find(n=>n.id===id);
+
+    return(
+
+<section className="skills" id="skills">
+
+<div className="section-heading">
+
+<p>TECH STACK</p>
+
+<h2>AI Neural Network</h2>
+
+</div>
+
+<div className="network">
+
+<svg
+viewBox="120 0 760 650"
+className="network-svg"
+>
+
+<defs>
+
+<linearGradient
+id="networkGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%"
+>
+
+<stop
+offset="0%"
+stopColor="#4facfe"
+/>
+
+<stop
+offset="100%"
+stopColor="#8b5cf6"
+/>
+
+</linearGradient>
+
+<filter id="blueGlow">
+
+<feGaussianBlur
+stdDeviation="5"
+result="blur"
+/>
+
+<feMerge>
+
+<feMergeNode in="blur"/>
+
+<feMergeNode in="SourceGraphic"/>
+
+</feMerge>
+
+</filter>
+
+</defs>
+{/* ================= CONNECTIONS ================= */}
+
+{links.map(([from, to], index) => {
+
+  const start = getNode(from);
+  const end = getNode(to);
+
+  const highlighted =
+    active === null ||
+    active === from ||
+    active === to;
 
   return (
-    <section className="skills" id="skills">
 
-      <div className="section-heading">
+    <g key={index}>
 
-        <p>What I Know</p>
+      {/* Glow Line */}
 
-        <h2>Skills</h2>
+      <motion.line
 
-      </div>
+        x1={start.x}
+        y1={start.y}
 
-      <div className="skill-category">
+        x2={end.x}
+        y2={end.y}
 
-        <h3>Frontend</h3>
+        stroke="url(#networkGradient)"
 
-        <div className="skill-grid">
+        strokeWidth="8"
 
-          {renderCards(frontend)}
+        opacity={highlighted ? 0.18 : 0.04}
 
-        </div>
+        filter="url(#blueGlow)"
 
-      </div>
+        initial={{
+          pathLength: 0,
+        }}
 
-      <div className="skill-category">
+        whileInView={{
+          pathLength: 1,
+        }}
 
-        <h3>Backend</h3>
+        transition={{
+          duration: 1,
+          delay: index * 0.08,
+        }}
 
-        <div className="skill-grid">
+      />
 
-          {renderCards(backend)}
+      {/* Main Line */}
 
-        </div>
+      <motion.line
 
-      </div>
+        x1={start.x}
+        y1={start.y}
 
-      <div className="skill-category">
+        x2={end.x}
+        y2={end.y}
 
-        <h3>Languages</h3>
+        stroke="url(#networkGradient)"
 
-        <div className="skill-grid">
+        strokeWidth="2"
 
-          {renderCards(languages)}
+        strokeLinecap="round"
 
-        </div>
+        opacity={highlighted ? 0.9 : 0.15}
 
-      </div>
+        initial={{
+          pathLength: 0,
+        }}
 
-      <div className="skill-category">
+        whileInView={{
+          pathLength: 1,
+        }}
 
-        <h3>Databases</h3>
+        transition={{
+          duration: 1,
+          delay: index * 0.08,
+        }}
 
-        <div className="skill-grid">
+      />
 
-          {renderCards(databases)}
+      {/* Energy Particle */}
 
-        </div>
+      <motion.circle
 
-      </div>
+        r="4"
 
-      <div className="skill-category">
+        fill="#4facfe"
 
-        <h3>Tools</h3>
+        filter="url(#blueGlow)"
 
-        <div className="skill-grid">
+        initial={{
+          cx: start.x,
+          cy: start.y,
+        }}
 
-          {renderCards(tools)}
+        animate={{
+          cx: [start.x, end.x],
+          cy: [start.y, end.y],
+        }}
 
-        </div>
+        transition={{
+          duration: 2 + index * 0.15,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
 
-      </div>
+        opacity={highlighted ? 1 : 0.15}
 
-    </section>
+      />
+
+    </g>
+
   );
+
+})}
+{/* ===================== NODES ===================== */}
+
+{nodes.map((node, index) => {
+
+  const activeNode =
+    active === null ||
+    active === node.id ||
+    node.id === "you";
+
+  return (
+
+    <motion.g
+
+      key={node.id}
+
+      onMouseEnter={() => setActive(node.id)}
+
+      onMouseLeave={() => setActive(null)}
+
+      style={{
+        cursor: "pointer",
+      }}
+
+      initial={{
+        opacity:0,
+        scale:0,
+      }}
+
+      whileInView={{
+        opacity:1,
+        scale:1,
+      }}
+
+      transition={{
+        delay:1 + index*.08,
+        duration:.45,
+      }}
+
+    >
+
+      {/* Glow */}
+
+      <motion.circle
+
+        cx={node.x}
+
+        cy={node.y}
+
+        r={node.radius+12}
+
+        fill="#4facfe"
+
+        opacity={activeNode?.id ? .18 : .10}
+
+        filter="url(#blueGlow)"
+
+        animate={
+
+          node.id==="you"
+
+          ?{
+
+            r:[46,50,46],
+
+            opacity:[.18,.45,.18]
+
+          }
+
+          :{
+
+            r:[node.radius+10,node.radius+14,node.radius+10]
+
+          }
+
+        }
+
+        transition={{
+
+          duration:2.8,
+
+          repeat:Infinity,
+
+          ease:"easeInOut"
+
+        }}
+
+      />
+
+      {/* Main Circle */}
+
+      <motion.circle
+
+        cx={node.x}
+
+        cy={node.y}
+
+        r={node.radius}
+
+        className="network-node"
+
+        fill={
+          node.id==="you"
+          ?"#2563eb"
+          :"#0f172a"
+        }
+
+        stroke="#4facfe"
+
+        strokeWidth={
+          active===node.id
+          ?3
+          :2
+        }
+
+        whileHover={{
+
+          scale:1.12
+
+        }}
+
+      />
+
+      {/* Label */}
+
+   <text
+
+    x={node.x}
+
+    y={node.y - node.radius - 18}
+
+    className="node-label"
+
+    textAnchor="middle"
+
+>
+
+    {node.label}
+
+</text>
+
+    </motion.g>
+
+  );
+
+})}
+{/* ===================== RADAR RINGS ===================== */}
+
+<motion.circle
+  cx="500"
+  cy="330"
+  r="55"
+  className="radar-ring"
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{
+    scale: [0.8, 1.4],
+    opacity: [0.4, 0],
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeOut",
+  }}
+/>
+
+<motion.circle
+  cx="500"
+  cy="330"
+  r="55"
+  className="radar-ring"
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{
+    scale: [0.8, 1.4],
+    opacity: [0.4, 0],
+  }}
+  transition={{
+    duration: 3,
+    delay: 1,
+    repeat: Infinity,
+    ease: "easeOut",
+  }}
+/>
+
+<motion.circle
+  cx="500"
+  cy="330"
+  r="55"
+  className="radar-ring"
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{
+    scale: [0.8, 1.4],
+    opacity: [0.4, 0],
+  }}
+  transition={{
+    duration: 3,
+    delay: 2,
+    repeat: Infinity,
+    ease: "easeOut",
+  }}
+/>
+
+{/* ===================== BACKGROUND PARTICLES ===================== */}
+
+{Array.from({ length: 40 }).map((_, index) => (
+
+  <motion.circle
+    key={`particle-${index}`}
+
+    cx={Math.random() * 1000}
+    cy={Math.random() * 650}
+
+    r={Math.random() * 1.3 + .5}
+
+    className="bg-particle"
+
+    animate={{
+      opacity: [0.2, 0.8, 0.2],
+      cy: [
+        Math.random() * 650,
+        Math.random() * 650 - 20,
+        Math.random() * 650,
+      ],
+    }}
+
+    transition={{
+      duration: 2 + Math.random() * 3,
+      repeat: Infinity,
+      delay: Math.random() * 3,
+    }}
+
+  />
+
+))}
+</svg>
+
+
+</div>
+<div className="network-info">
+
+  <motion.h3
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3 }}
+  >
+    Connected Technologies
+  </motion.h3>
+
+  <motion.p
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.5 }}
+  >
+    My development ecosystem visualized as an AI neural network.
+    Every technology connects together to build scalable,
+    intelligent and modern applications.
+  </motion.p>
+
+</div>
+
+</section>
+
+);
+
 }
 
 export default Skills;
