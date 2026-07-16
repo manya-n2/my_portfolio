@@ -1,5 +1,5 @@
 import "../styles/Hero.css";
-import heroImg from "../assets/images/hero.png";
+import heroImg from "../assets/images/manya.png";
 
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -31,7 +31,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Your Name
+          Manya Nigam
         </motion.h1>
 
         <motion.div
