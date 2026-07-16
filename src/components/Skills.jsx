@@ -1,6 +1,8 @@
 import "../styles/Skills.css";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import SkillPanel from "./SkillPanel";
+import skills from "../data/skills";
 
 const nodes = [
   {
@@ -96,6 +98,7 @@ const links = [
 function Skills(){
 
     const [active,setActive]=useState(null);
+    const [selectedSkill, setSelectedSkill] = useState(null);
 
     const getNode=(id)=>nodes.find(n=>n.id===id);
 
@@ -293,7 +296,16 @@ result="blur"
 
       onMouseEnter={() => setActive(node.id)}
 
-      onMouseLeave={() => setActive(null)}
+onMouseLeave={() => {
+    if(!selectedSkill){
+        setActive(null);
+    }
+}}
+
+onClick={()=>{
+    setSelectedSkill(node.id);
+    setActive(node.id);
+}}
 
       style={{
         cursor: "pointer",
@@ -400,11 +412,39 @@ result="blur"
 
       {/* Label */}
 
-   <text
+
+<foreignObject
+    x={node.x-18}
+    y={node.y-node.radius-50}
+    width="36"
+    height="36"
+>
+
+    <div
+        className="skill-svg-icon"
+    >
+
+        {
+
+            (()=>{
+
+                const Icon=skills[node.id]?.icon;
+
+                return Icon ? <Icon color={skills[node.id].color}/> : null;
+
+            })()
+
+        }
+
+    </div>
+
+</foreignObject>
+
+<text
 
     x={node.x}
 
-    y={node.y - node.radius - 18}
+    y={node.y+55}
 
     className="node-label"
 
@@ -533,6 +573,31 @@ result="blur"
   </motion.p>
 
 </div>
+<SkillPanel
+
+    skill={
+
+        selectedSkill
+
+        ?
+
+        skills[selectedSkill]
+
+        :
+
+        null
+
+    }
+
+    onClose={()=>{
+
+        setSelectedSkill(null);
+
+        setActive(null);
+
+    }}
+
+/>
 
 </section>
 

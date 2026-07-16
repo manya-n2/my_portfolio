@@ -296,3 +296,26 @@ display:none;
 }
 
 }
+.skill-svg-icon{
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+    transition:.3s;
+
+}
+
+.skill-svg-icon:hover{
+
+    transform:scale(1.2);
+
+}
