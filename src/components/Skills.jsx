@@ -552,27 +552,7 @@ onClick={()=>{
 
 
 </div>
-<div className="network-info">
 
-  <motion.h3
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.3 }}
-  >
-    Connected Technologies
-  </motion.h3>
-
-  <motion.p
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5 }}
-  >
-    My development ecosystem visualized as an AI neural network.
-    Every technology connects together to build scalable,
-    intelligent and modern applications.
-  </motion.p>
-
-</div>
 <SkillPanel
 
     skill={

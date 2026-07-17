@@ -2,7 +2,12 @@
 
     width:90%;
     max-width:1300px;
-    margin:150px auto;
+
+    margin-top:30px;
+    margin-bottom:80px;
+
+    margin-left:auto;
+    margin-right:auto;
 
 }
 

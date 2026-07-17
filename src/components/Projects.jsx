@@ -11,42 +11,45 @@ function Projects() {
   const projects = [
 
     {
-      title: "Project One",
+      title: "MedbriefAi",
       image: project1,
       description:
-        "Placeholder description for your project. We'll replace it with your real projects later.",
+        "An AI-powered clinical assistant that summarizes medical documents, analyzes patient risk, and provides intelligent healthcare insights.",
 
       tech: [
         "React",
-        "Spring Boot",
-        "PostgreSQL",
+        "Docker",
+        "FastAPI",
       ],
+       github: "https://github.com/manya-n2/medbriefai",
+    demo: "https://medbrief-ai.vercel.app", 
     },
 
     {
-      title: "Project Two",
+      title: "Threadly",
       image: project2,
       description:
-        "Placeholder description for your second project.",
+        "A full-stack e-commerce platform with secure authentication, product management, and a scalable backend for seamless online shopping.",
 
       tech: [
         "Java",
-        "React",
+        "Springboot",
         "Docker",
       ],
+      github: "https://github.com/manya-n2/THREADLY",
     },
 
     {
-      title: "Project Three",
+      title: "Textale",
       image: project3,
       description:
-        "Placeholder description for your third project.",
+        "A Python-based text analysis application that performs sentiment analysis and NLP-driven processing to extract meaningful insights from textual data.",
 
       tech: [
         "Python",
-        "Machine Learning",
-        "Flask",
+        "FastAPI",
       ],
+      github: "https://github.com/manya-n2/my-texttale",
     },
 
   ];
@@ -118,23 +121,31 @@ function Projects() {
 
               <div className="project-buttons">
 
-                <button>
+  {project.github && (
+    <a
+  href={project.github}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="project-btn github-btn"
+>
+  <FaGithub />
+  GitHub
+</a>
+  )}
 
-                  <FaGithub />
+  {project.demo && (
+    <a
+  href={project.demo}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="project-btn demo-btn"
+>
+  <FaExternalLinkAlt />
+  Live Demo
+</a>
+  )}
 
-                  GitHub
-
-                </button>
-
-                <button>
-
-                  <FaExternalLinkAlt />
-
-                  Live Demo
-
-                </button>
-
-              </div>
+</div>
 
             </div>
 
