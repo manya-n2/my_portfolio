@@ -36,15 +36,10 @@ function About() {
             <h3>Who Am I?</h3>
 
             <p>
-              This section will contain your introduction.
-              We'll later replace this placeholder with your
-              actual story, achievements and career goals.
+              I’m Manya Nigam, a final-year B.Tech Computer Science (AI & ML) student with a passion for building intelligent, scalable, and user-centric applications. I enjoy turning ideas into impactful products by combining full-stack development with AI-driven solutions. With hands-on experience in Java, Spring Boot, React, PostgreSQL, Docker, and Machine Learning, I love solving real-world problems through clean architecture and thoughtful design. Beyond coding, I continuously challenge myself through data structures and algorithms, open-source learning, and building projects that create meaningful value.
             </p>
 
-            <p>
-              The aim is to create a portfolio that is
-              elegant, modern and recruiter-friendly.
-            </p>
+           
 
           </div>
 
@@ -52,7 +47,7 @@ function About() {
 
             <div className="stat-card">
 
-              <h2>10+</h2>
+              <h2>3+</h2>
 
               <span>Projects</span>
 
@@ -60,7 +55,7 @@ function About() {
 
             <div className="stat-card">
 
-              <h2>500+</h2>
+              <h2>250+</h2>
 
               <span>DSA Problems</span>
 
@@ -68,9 +63,9 @@ function About() {
 
             <div className="stat-card">
 
-              <h2>2+</h2>
+              <h2>1</h2>
 
-              <span>Internships</span>
+              <span>Internship</span>
 
             </div>
 
@@ -97,7 +92,7 @@ function About() {
               <h3>Education</h3>
 
               <p>
-                Placeholder for degree, college and CGPA.
+                B.Tech in CSE-AIML , ABES Engineering College , CGPA-8.69
               </p>
 
             </div>
@@ -135,7 +130,7 @@ function About() {
 
               <p>
                 Artificial Intelligence,
-                Machine Learning and
+                Machine Learning (Basics) and
                 Problem Solving.
               </p>
 
@@ -185,21 +180,6 @@ function About() {
 
         </motion.div>
 
-        <motion.div
-          className="mini-card"
-          whileHover={{ y: -10 }}
-        >
-
-          <FaLightbulb />
-
-          <h3>Creative Thinker</h3>
-
-          <p>
-            Loves designing elegant
-            and user-friendly solutions.
-          </p>
-
-        </motion.div>
 
         <motion.div
           className="mini-card"
@@ -217,6 +197,20 @@ function About() {
 
         </motion.div>
 
+        <motion.div
+          className="mini-card"
+          whileHover={{ y: -10 }}
+        >
+
+          <FaLightbulb />
+
+          <h3>Public Speaker</h3>
+
+          <p>
+            Active debator , reperesented E-CELL at IIT Bombay
+          </p>
+
+        </motion.div>
       </div>
 
     </section>
