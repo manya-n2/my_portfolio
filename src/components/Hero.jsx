@@ -73,13 +73,17 @@ function Hero() {
           transition={{ delay: .9 }}
         >
 
-          <button className="primary-btn">
-            Download Resume
-          </button>
+          <a
+    href="/resume/Manya_Nigam_Resume.pdf"
+    download="Manya_Nigam_Resume.pdf"
+    className="primary-btn"
+>
 
-          <button className="secondary-btn">
-            View Projects
-          </button>
+    Download Resume
+
+</a>
+
+          
 
         </motion.div>
 
