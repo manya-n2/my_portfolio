@@ -43,11 +43,7 @@ function Navbar() {
 
         </ul>
 
-        <button className="contact-btn">
-
-          Let's Talk
-
-        </button>
+        
 
       </div>
 

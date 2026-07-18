@@ -94,11 +94,15 @@ function Hero() {
           transition={{ delay: 1.2 }}
         >
 
-          <a href="#">
+          <a  href="https://github.com/manya-n2"
+    target="_blank"
+    rel="noopener noreferrer">
             <FaGithub />
           </a>
 
-          <a href="#">
+          <a  href="https://www.linkedin.com/in/manya-nigam/"
+    target="_blank"
+    rel="noopener noreferrer">
             <FaLinkedin />
           </a>
 
