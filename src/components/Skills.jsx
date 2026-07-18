@@ -108,11 +108,12 @@ function Skills(){
 
 <div className="section-heading">
 
-<p>TECH STACK</p>
+<p>Click a node to view related projects.</p>
 
-<h2>AI Neural Network</h2>
+<h2>TECH STACK</h2>
 
 </div>
+
 
 <div className="network">
 

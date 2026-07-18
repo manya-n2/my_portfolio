@@ -30,11 +30,11 @@ const skills = {
     projects:[
       {
         name:"Portfolio",
-        github:"https://github.com/yourusername/portfolio"
+        github:"https://github.com/manya-n2/portfolio"
       },
       {
         name:"MedBrief AI",
-        github:"https://github.com/yourusername/medbrief-ai"
+        github:"https://github.com/manya-n2/medbrief-ai"
       }
     ]
 
@@ -55,7 +55,7 @@ const skills = {
     projects:[
       {
         name:"Threadly",
-        github:"https://github.com/yourusername/threadly"
+        github:"https://github.com/manya-n2/threadly"
       }
     ]
 
@@ -76,11 +76,11 @@ const skills = {
     projects:[
       {
         name:"Threadly",
-        github:"https://github.com/yourusername/threadly"
+        github:"https://github.com/manya-n2/threadly"
       },
       {
         name:"MedBrief AI",
-        github:"https://github.com/yourusername/medbrief-ai"
+        github:"https://github.com/manya-n2/medbrief-ai"
       }
     ]
 
@@ -101,8 +101,13 @@ const skills = {
     projects:[
       {
         name:"MedBrief AI",
-        github:"https://github.com/yourusername/medbrief-ai"
+        github:"https://github.com/manya-n2/medbrief-ai"
+      },
+      {
+        name:"my_textale",
+        github:"https://github.com/manya-n2/my-texttale"
       }
+      
     ]
 
   },
@@ -122,7 +127,7 @@ const skills = {
     projects:[
       {
         name:"Threadly",
-        github:"https://github.com/yourusername/threadly"
+        github:"https://github.com/manya-n2/threadly"
       }
     ]
 
@@ -143,7 +148,7 @@ const skills = {
     projects:[
       {
         name:"MedBrief AI",
-        github:"https://github.com/yourusername/medbrief-ai"
+        github:"https://github.com/manya-n2/medbrief-ai"
       }
     ]
 
@@ -164,7 +169,7 @@ const skills = {
     projects:[
       {
         name:"GitHub Profile",
-        github:"https://github.com/yourusername"
+        github:"https://github.com/manya-n2"
       }
     ]
 
@@ -185,11 +190,11 @@ const skills = {
     projects:[
       {
         name:"Portfolio",
-        github:"https://github.com/yourusername/portfolio"
+        github:"https://github.com/manya-n2/portfolio"
       },
       {
         name:"MedBrief AI",
-        github:"https://github.com/yourusername/medbrief-ai"
+        github:"https://github.com/manya-n2/medbrief-ai"
       }
     ]
 
